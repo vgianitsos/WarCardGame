@@ -34,8 +34,16 @@ class ViewController: UIViewController {
     //IB action functions
     
     @IBAction func dealTapped(_ sender: Any) {
-        print("deal tapped!!")
+        //have to have spaces btw = sign btw
+        //UIImage() has property where it can get an image for you
+        //leftImageView.image = UIImage(named: "card5") this makes left card 5 when deal is clicked
         
+        //2 constants for randomly picking right and left cards
+        let leftNumber = Int.random(in: 2...14)
+        let rightNumber = Int.random(in: 2...14)
+
+        leftImageView.image = UIImage(named: "card\(leftNumber)")
+        rightImageView.image = UIImage(named: "card\(rightNumber)")
     }
     
     
