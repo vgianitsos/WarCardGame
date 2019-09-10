@@ -14,17 +14,12 @@ class ViewController: UIViewController {
     // 4 IB outlet properties below
     //obj hooks up item in story board to here
     @IBOutlet weak var leftImageView: UIImageView!
-    
-    
     @IBOutlet weak var rightImageView: UIImageView!
-    
-    
-    
     @IBOutlet weak var leftScoreLabel: UILabel!
-    
-    
-    
     @IBOutlet weak var rightScoreLabel: UILabel!
+    
+    var leftScore = 0
+    var rightScore = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,6 +39,20 @@ class ViewController: UIViewController {
 
         leftImageView.image = UIImage(named: "card\(leftNumber)")
         rightImageView.image = UIImage(named: "card\(rightNumber)")
+        
+        //now update score
+        if leftNumber > rightNumber {
+            //left wins
+            leftScore += 1
+            leftScoreLabel.text = String(leftScore)
+        } else if leftNumber < rightNumber {
+            //right wins
+            rightScore += 1
+            rightScoreLabel.text = String(rightScore)
+        } else {
+            //tie
+            
+        }
     }
     
     
